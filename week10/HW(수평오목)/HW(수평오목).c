@@ -40,6 +40,7 @@ void main()
 	int r, c;
 	int i, j;
 	int count;
+	int winner = 0;
 
 	for(i =0; i < BOARD_SIZE ; i++ )
 		for(j = 0 ; j < BOARD_SIZE ; j++ )
@@ -58,6 +59,7 @@ void main()
 		}
 		if (winCheck(board, r, c)) {
 			printf("Player %c wins!\n", turn);
+			winner = 1;
 			break;
 		}
 		if (count % 2 == 0)
@@ -65,4 +67,6 @@ void main()
 		else
 			turn = 'X';
 	} while(count <= BOARD_SIZE * BOARD_SIZE);
+	if (!winner)
+		printf("Nobody wins!\n");
 }
