@@ -13,7 +13,7 @@ void rotateArray(int a[][4], int size)
 	int i, j;
 	for (i = 0; i < size; i++) {
 		for (j = 0; j < 4; j++) 
-			printf("%d ", a[size - 1 - i][3 - j]);
+			printf("%d ", a[size - 1 - i][3 - j]); // 그냥 3 - i로 써도 o
 		printf("\n");
 	}		
 }
