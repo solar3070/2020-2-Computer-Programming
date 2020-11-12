@@ -1,3 +1,4 @@
+// 교수님 코드
 #include <stdio.h>
 #define BOARD_SIZE 3 // 추후에 10으로 바꾸어서 진행한다
 void display(char b[][BOARD_SIZE])
@@ -33,21 +34,11 @@ void main()
 	{
 		printf("Player %c(행 열):", turn);
 		scanf("%d %d", &r, &c);
-		if (board[r][c] == ' ') {
-			board[r][c] = turn;
-			display(board);
-			count++;
 
-			/* 비어있지 않은 경우 다시 계산하는 것을 피하기 위해 if문 안에 넣어주는 게 좋음
-			if (count % 2 == 0)
-				turn = 'O';
-			else
-				turn = 'X';
-			*/
-		}
-		if (count % 2 == 0) // 위로 옮기기
-			turn = 'O';
-		else
-			turn = 'X';
+		if (board[r][c] != ' ') continue; // continue를 안쓰고 괄호에 넣어줘도 o
+		board[r][c] = turn;
+		display(board);
+		turn = (turn == 'X' ? 'O' : 'X');
+		count++;
 	} while(count <= BOARD_SIZE * BOARD_SIZE);
 }
