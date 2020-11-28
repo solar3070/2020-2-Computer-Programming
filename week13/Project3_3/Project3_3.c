@@ -68,7 +68,7 @@ void readVideo(VideoInfo videoList[], int *videoCountPtr)
 
 	// 비디오 정보를 입력파일에서 읽기
 	while (!feof(fp)) {
-		fscanf(fp, "%s %d", &videoList->title, &videoList->qty);
+		fscanf(fp, "%s %d\n", &videoList->title, &videoList->qty);
 		(*videoCountPtr)++;
 		videoList++;
 	}
