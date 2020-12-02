@@ -4,7 +4,7 @@
 int main(void)
 {
 	int i, num, sum = 0;
-	FILE *fp, *fp2, *fp3;
+	FILE *fp, *fp2;
 	
 	srand(time(NULL));
 
@@ -17,7 +17,7 @@ int main(void)
 	for (i = 0; i < 10; i++)
 		fprintf(fp, "%d\n", rand() % 100);
 
-	fclose(fp); // ¾ÈÇØÁÖ¸é °á°ú ¾È³ª¿È
+	fclose(fp); // ¾ÈÇØÁÖ¸é °á°ú ¾È³ª¿È ´Ý¾ÆÁà¾ß ÆÄÀÏ »ý¼º
 
 	fp = fopen("random.txt", "rt");
 	if (fp == NULL) {
